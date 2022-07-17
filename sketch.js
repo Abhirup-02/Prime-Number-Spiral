@@ -75,7 +75,6 @@ function draw() {
     }
   }
   step++;
-  frameRate(50)
 
   if (step > totalSteps) {
     noLoop();

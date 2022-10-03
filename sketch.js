@@ -7,7 +7,7 @@ let state = 0;
 let turncounter = 0;
 let totalSteps;
 
-//function to generate al prime numbers upto canvas width * canvas height
+//function to generate all prime numbers upto canvas width * canvas height
 function isPrime(value) {
   if(value == 1) return false;
   for (let i = 2; i <= sqrt(value); i++){

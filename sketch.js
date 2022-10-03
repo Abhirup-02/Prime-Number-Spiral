@@ -7,7 +7,7 @@ let state = 0;
 let turncounter = 0;
 let totalSteps;
 
-
+//function to generate al prime numbers upto canvas width * canvas height
 function isPrime(value) {
   if(value == 1) return false;
   for (let i = 2; i <= sqrt(value); i++){
@@ -18,6 +18,7 @@ function isPrime(value) {
   return true;
 }
 
+//Calcuate column and row size based on stepSize
 
 function setup() {
   createCanvas(innerWidth,innerHeight);
@@ -47,10 +48,12 @@ function draw() {
   if (isPrime(step)) {
     circle(x, y, stepSize * 0.25)
   } 
+  
   //line(x, y, px, py);
   px = x;
   py = y;
   
+  //Changing x and y direction 
   switch (state) {
     case 0:
       x += stepSize;
@@ -66,7 +69,8 @@ function draw() {
       break;
   }
 
-    
+
+ 
   if (step % numSteps == 0) {
     state = (state + 1) % 4;
     turncounter++;
@@ -75,7 +79,7 @@ function draw() {
     }
   }
   step++;
-
+//Stop generating prime numbers and drawing on canvas when the canvas ends
   if (step > totalSteps) {
     noLoop();
   }
